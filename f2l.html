@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F2L</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">CFOP Course</div>
+
+    <div class="nav-links">
+        <a href="/">About</a>
+        <a href="/notation">Notation</a>
+        <a href="/f2l">F2L</a>
+        <a href="/oll">OLL</a>
+        <a href="/pll">PLL</a>
+    </div>
+
+</div>
+
+<div class="container">
+
+<h1>F2L</h1>
+
+<div class="progress-section">
+
+    <div class="progress-text"
+    id="progressText">
+
+    0/41
+
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill"
+        id="progressFill"></div>
+    </div>
+
+</div>
+
+{% set algs = [
+
+"U (R U' R') / (R' F R F')",
+"U' (L' U L) / (L F' L' F)",
+"(R U R')",
+"(L' U' L)",
+"U' (R U R') [U2 R U' R']",
+"U' (R U2' R') [U2 R U' R']",
+"U' (R U R') [U R U R']",
+"U (R U2' R') [U R U' R']",
+"U2 (R U R') [U R U' R']",
+"U (L' U' L) [U2' L' U L]",
+"U (L' U2 L) [U2' L' U L]",
+"U (L' U' L) [U' L' U' L]",
+"U' (L' U2 L) [U' L' U L]",
+"U2 (L' U' L) [U' L' U L]",
+"(U R U' R')*3",
+"U' (R' F R F') [R U' R']",
+"U' (R U' R') [U2 R U' R']",
+"U (R U R') [U2' R U R']",
+"U2 (R U R') [F R' F' R]",
+"U2 (F' U' F) [U R U' R']",
+"U' (R' F R F') [R U R']",
+"(R U' R') [U R U' R']",
+"(R U R') [U' R U R']",
+"U (L F' L' F) [L' U' L]",
+"(L' U L) [U' L' U L]",
+"(L' U' L) [U L' U' L]",
+"(R U' R') (U R U' R')[U2 R U' R']",
+"U' (R U' R') [U R U R']",
+"(R U R') (U2 R U' R') [U R U' R']",
+"(R U2' R') [U' R U R']",
+"U (R U' R') (U' R U' R') [U R U' R']",
+"(L' U L) (U' L' U L) [U2' L' U L]",
+"U (L' U L) [U' L' U' L]",
+"(L' U' L) (U2' L' U L) [U' L' U L]",
+"(L' U2 L) [U L' U' L]",
+"U' (L' U L) (U L' U L) [U' L' U L]",
+"(R U' R') (U' R U R') [U2 R U' R']",
+"(R U' R') (U R U2' R') [U R U' R']",
+"(R U' R') (U' R U' R') [d R' U' R]",
+"(R U R') (U' R U' R') [U2 y' R' U' R]",
+"(R U' R') (d R' U2' R) [U R' U2' R]", 
+
+] %}
+
+<div class="case-grid">
+
+{% for i in range(1, 42) %}
+
+<div class="case-card">
+
+    <img src="/static/images/f2l/f2l_{{ i }}.png">
+
+    <div class="case-title">
+        F2L {{ i }}
+    </div>
+
+    <div class="algorithm">
+        {{ algs[i-1] }}
+    </div>
+
+    <label>
+        <input type="checkbox">
+        Learned
+    </label>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<a class="youtube-button"
+href="https://www.youtube.com/@MTUCUBE"
+target="_blank">
+
+YouTube Channel
+
+</a>
+
+<script src="/static/script.js"></script>
+
+<script>
+setupProgress("f2l", 41);
+</script>
+
+</body>
+</html>

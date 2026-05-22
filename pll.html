@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PLL</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">CFOP Course</div>
+
+    <div class="nav-links">
+        <a href="/">About</a>
+        <a href="/notation">Notation</a>
+        <a href="/f2l">F2L</a>
+        <a href="/oll">OLL</a>
+        <a href="/pll">PLL</a>
+    </div>
+
+</div>
+
+<div class="container">
+
+<h1>PLL</h1>
+
+<div class="progress-section">
+
+    <div class="progress-text"
+    id="progressText">
+
+    0/21
+
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill"
+        id="progressFill"></div>
+    </div>
+
+</div>
+
+{% set names = [
+
+"Ua Perm",
+"Ub Perm",
+"H Perm",
+"Z Perm",
+"Aa Perm",
+"Ab Perm",
+"E Perm",
+"T Perm",
+"F Perm",
+"Jb Perm",
+"Ja / L Perm",
+"Ra Perm"
+"Rb Perm",
+"Y Perm",
+"Na Perm",
+"Nb Perm",
+"V Perm",
+"Ga Perm",
+"Gb Perm",
+"Gc Perm",
+"Gd Perm",
+
+] %}
+
+{% set algs = [
+
+"(R U R' U) R' U' (R2 U' R') U R' U R",
+"R' U R' U' (R3 U') R' U (R U R2)",
+"M2 U' (M2 U2 M2) U' M2",
+"M' U' (M2 U') (M2 U') M' U2 M2",
+"x (R' U R') D2 (R U' R') D2 R2 x'",
+"x R2 D2 (R U R') D2 (R U' R) x'",
+"x' (R U' R') D (R U R') D' 
+(R U R') D (R U' R') D' x",
+"(R U R' U') R' F 
+(R2 U' R') U' (R U R' F')",
+"R' U' F' (R U R' U') R' F(R2 U' R') U' (R U R') U R",
+"R U R' F' (R U R' U') R' F (R2 U' R')",
+"x R2 (F R F' R) U2 (r' U r) U2 x'",
+"(R U' R' U') R U R D (R' U' R D') R' U2 R'",
+"(R' U2 R U2) R' F (R U R' U') R' F' R2",
+"F (R U' R' U') R U R' F' (R U R' U') R' F R F'",
+"(R U R' U) R U R' F' (R U R' U') R' F (R2 U' R') U2 R U' R'",
+"(R' U R U') R' (F' U' F) R U (R' U' R U') f R f'",
+"(R' U R' U') R D' R' D R' (U D' R2 U' R2 D R2)",
+"R2 (U R' U R') U' R U' R2 (D U') R' U R D'",
+"D R' U' R (U D') R2 U 
+R' U (R U' R U') R2",
+"D R2 (U' R U' R) U R' U R2 (D' U) R U' R'",
+"R U R' (U' D) R2 U' R U'
+(R' U R' U) R2 D'",
+
+] %}
+
+<div class="case-grid">
+
+{% for i in range(1, 22) %}
+
+<div class="case-card">
+
+    <img src="/static/images/pll/pll_{{ i }}.png">
+
+    <div class="case-title">
+        {{ names[i-1] }}
+    </div>
+
+    <div class="algorithm">
+        {{ algs[i-1] }}
+    </div>
+
+    <label>
+        <input type="checkbox">
+        Learned
+    </label>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<a class="youtube-button"
+href="https://www.youtube.com/@MTUCUBE"
+target="_blank">
+
+YouTube Channel
+
+</a>
+
+<script src="/static/script.js"></script>
+
+<script>
+setupProgress("pll", 21);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OLL</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">CFOP Course</div>
+
+    <div class="nav-links">
+        <a href="/">About</a>
+        <a href="/notation">Notation</a>
+        <a href="/f2l">F2L</a>
+        <a href="/oll">OLL</a>
+        <a href="/pll">PLL</a>
+    </div>
+
+</div>
+
+<div class="container">
+
+<h1>OLL</h1>
+
+<div class="progress-section">
+
+    <div class="progress-text"
+    id="progressText">
+
+    0/57
+
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill"
+        id="progressFill"></div>
+    </div>
+
+</div>
+
+{% set algs = [
+
+"R U R' U (R U2 R')",
+"(R U2 R') U' R U' R'",
+"R U R' U (R U' R' U) R U2 R'",
+"R U2 (R2 U') (R2 U') R2 U2 R",
+"(R U R) D (R' U' R) D' R2",
+"R2 D' (R U' R') D (R U R)",
+"R2 D (R' U2 R) D' (R' U2 R')",
+"F (R U R' U') F'",
+"(R U R' U') (R' F R F')",
+"(r U2 R') U' R U' r'",
+"(r' U2 R) U R' U r",
+"(r U R' U') M (U R U' R')",
+"(R U R' U') M' (U R U' r')",
+"r U R' U (R U2 r')",
+"R' F' (r U' r') F2 R",
+"r' (R2 U R' U R U2 R') U M'",
+"r (R2 U' R U' R' U2 R) U' M",
+"(f R' F' R) (U R U' R') S'",
+"f' (r U r' U') (r' F r S)",
+"F (U R U' R') F'",
+"R' (U' F' U F) R",
+"R' U' F (U R U' R') F' R",
+"S (R U R' U') (R' F R f')",
+"R' U' (R' F R F') U R",
+"f R f' U' r' U' R U M'"
+"(F R' F' R) (U R U' R')",
+"R U2 R2’ (F R F' R) U2 R'",
+"(R U R' U') R' F (R2 U R' U') F'",
+"R U R' U (R' F R F') R U2 R'",
+"(R U R' U) R U' R' U' (R' F R F')",
+"(L' U' L U') L' U L U (r U’ r’ F)",
+"F (R U R' U') (R U R' U') F'",
+"(F R' F' R) U2 (R U' R' U) R U2 R'",
+"r U R' U (R U' R' U) R U2 r'",
+"r' U' R U' (R' U R U') R' U2 r",
+"r U' (r2’ U) (r2 U) r2’ U' r",
+"r' U (r2 U') (r2’ U') r2 U r'",
+"F (U R U' R') (U R U' R') F'",
+"R' (F' U' F U') R U R' U R",
+"r U r' (U R U' R') (U R U' R') r U' r'",
+"R' F (R U R U') R2 F' R2 U' R' U (R U R')",
+"r U r' (R U R' U') r U' r'",
+"R' F' R (L' U' L U) R' F R",
+"(F U R U') R2 F' R (U R U' R')",
+"R' F (R U R') F' R (F U' F')",
+"r2 D' (r U r') D r2 U' (r' U' r)",
+"F U (R U2 R' U')(R U2 R' U') F'",
+"(R U R' U R U2 R')F (R U R' U') F'"
+"R' U' F2 u' (R U R') D R2 B",
+"R U2 (R2 F R F') U2 (R' F R F')",
+"f (U R U' R') S' (U R U' R') F'",
+"(F R' F' R) U S' (R U' R') S",
+"S' (R U R') S U' (R' F R F')",
+"(r U R' U R U2 r')(r' U' R U' R' U2 r)",
+"(R' F2 R2 U2 R') F'(R U2 R2 F2 R)",
+"(R' F2 R2 U2 R') F (R U2 R2 F2 R)",
+"S R' U' (R U) (R U) R U' R' S'"
+
+] %}
+
+<div class="case-grid">
+
+{% for i in range(1, 58) %}
+
+<div class="case-card">
+
+    <img src="/static/images/oll/oll_{{ i }}.png">
+
+    <div class="case-title">
+        OLL {{ i }}
+    </div>
+
+    <div class="algorithm">
+        {{ algs[i-1] }}
+    </div>
+
+    <label>
+        <input type="checkbox">
+        Learned
+    </label>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<a class="youtube-button"
+href="https://www.youtube.com/@MTUCUBE"
+target="_blank">
+
+YouTube Channel
+
+</a>
+
+<script src="/static/script.js"></script>
+
+<script>
+setupProgress("oll", 57);
+</script>
+
+</body>
+</html>
